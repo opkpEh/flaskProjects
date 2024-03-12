@@ -1,0 +1,29 @@
+annotated-types==0.6.0
+anyio==4.3.0
+asgiref @ file:///work/perseverance-python-buildout/croot/asgiref_1698866701569/work
+blinker==1.7.0
+certifi==2024.2.2
+charset-normalizer==3.3.2
+click==8.1.7
+Django @ file:///work/perseverance-python-buildout/croot/django_1698884878321/work
+fastapi==0.110.0
+feedparser==6.0.11
+Flask==3.0.2
+h11==0.14.0
+idna==3.6
+itsdangerous==2.1.2
+Jinja2==3.1.3
+MarkupSafe==2.1.5
+pydantic==2.6.3
+pydantic_core==2.16.3
+requests==2.31.0
+setuptools==68.2.2
+sgmllib3k==1.0.0
+sniffio==1.3.1
+sqlparse @ file:///work/perseverance-python-buildout/croot/sqlparse_1698874574933/work
+starlette==0.36.3
+typing_extensions==4.10.0
+urllib3==2.2.1
+uvicorn==0.27.1
+Werkzeug==3.0.1
+wheel==0.41.2
