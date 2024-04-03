@@ -1,0 +1,74 @@
+$primary_color: #2D3E50;
+$primary_hover_color: #34495E;
+$success_color: #28B463;
+$success_hover_color: #229954;
+$title_color: #ECF0F1;
+$background_color: #222222;
+$text_color: #FFFFFF;
+
+body{
+  background-color: $primary_color;
+  font-family:'Press Start 2P';
+  margin: 0;
+  padding: 0;
+  background-color: $background_color;
+  color: $text_color;
+
+}
+
+.content{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: $primary_color;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0.1);
+  text-align: center;
+  
+  h1{
+    color: $title_color;
+  }
+  h4{
+    color: #666;
+  }
+  table{
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+
+    th,td{
+      padding: 10px;
+      border: 5px solid #2f7eda;
+    }
+  }
+  input{
+    padding: 10px;
+    margin: 15px;
+    border: solid 1px;
+    border-radius: 5px;
+  }
+
+  #btn_addr{
+    background-color: $success_color;
+    color: $background_color;
+    cursor: pointer;
+    &:hover{
+      background-color: $success_hover_color;
+    }
+  }
+}
+
+
+.DeleteEdit{
+  text-decoration: none;
+}
+.Edit{
+  color:#2f7eda
+}
+.Delete{
+  color:#d72525
+}
+
+.DeleteEdit:hover{
+  text-decoration: underline;
+};
