@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for("static", filename="styles.css")}}"/>
-    <link href='https://fonts.googleapis.com/css?family=Press Start 2P' rel='stylesheet'>
-
-    {% block head %} {% endblock %}
-
+    <title>{% block title %}Todo List{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
-    {% block body %} {% endblock %}    
+    <header class="site-header">
+        <div class="container">
+            <h1 class="site-title">Todo List</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <!-- Add more navigation items as needed -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            {% block content %}
+            <!-- Main content will be inserted here -->
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ current_year }} Todo List App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block extra_js %}{% endblock %}
 </body>
 </html>
