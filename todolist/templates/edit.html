@@ -1,93 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}Edit Task - My To-Do List{% endblock %}
-
-{% block extra_css %}
-<style>
-    .edit-form {
-        background-color: #34495E;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .edit-form h1 {
-        color: #ECF0F1;
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-    .form-group {
-        margin-bottom: 1rem;
-    }
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: #ECF0F1;
-    }
-    .form-group input[type="text"],
-    .form-group input[type="date"] {
-        width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #2f7eda;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ECF0F1;
-    }
-    .form-group input[type="date"] {
-        color-scheme: dark;
-    }
-    .btn-group {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 1.5rem;
-    }
-    .btn {
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .btn-primary {
-        background-color: #28B463;
-        color: #ECF0F1;
-    }
-    .btn-primary:hover {
-        background-color: #229954;
-    }
-    .btn-secondary {
-        background-color: #7f8c8d;
-        color: #ECF0F1;
-    }
-    .btn-secondary:hover {
-        background-color: #95a5a6;
-    }
-</style>
-{% endblock %}
+{% block title %}Edit Task - Todo List{% endblock %}
 
 {% block content %}
-<div class="content">
-    <div class="edit-form">
-        <h1>Edit Task</h1>
-        <form action="{{ url_for('edit_task', id=task.id) }}" method="POST">
-            <div class="form-group">
-                <label for="task_description">Task Description:</label>
-                <input type="text" id="task_description" name="task_description" value="{{ task.content }}" required>
-            </div>
-            <div class="form-group">
-                <label for="task_deadline">Deadline:</label>
-                <input type="date" id="task_deadline" name="task_deadline" value="{{ task.deadline.strftime('%Y-%m-%d') if task.deadline else '' }}">
-            </div>
-            <div class="btn-group">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="{{ url_for('home') }}" class="btn btn-secondary">Cancel</a>
-            </div>
-        </form>
-    </div>
-</div>
-{% endblock %}
-
-{% block body_scripts %}
-<script>
-    // Add any additional JavaScript here if needed
-</script>
+<section class="edit-task">
+    <h2>Edit Task</h2>
+    <form action="{{ url_for('edit_task', id=task.id) }}" method="POST" class="task-form">
+        <input type="text" name="task_description" value="{{ task.content }}" required>
+        <input type="date" name="task_deadline" value="{{ task.deadline.strftime('%Y-%m-%d') if task.deadline else '' }}">
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="task_complete" {% if task.complete %}checked{% endif %}>
+                Mark as complete
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Task</button>
+    </form>
+</section>
 {% endblock %}

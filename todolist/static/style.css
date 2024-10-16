@@ -123,6 +123,17 @@ body {
     background-color: #fffdf0;
 }
 
+.task-complete .task-text {
+    text-decoration: line-through;
+    color: var(--color-gray);
+}
+
+.task-checkbox {
+    margin-right: 1rem;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
 .task-content {
     flex-grow: 1;
 }
@@ -180,4 +191,118 @@ body {
     .task-actions {
         margin-top: 1rem;
     }
+}
+
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.alert-error {
+    background-color: #dc3545;
+    color: white;
+}
+
+:root {
+    --color-primary: #ffd700;  /* Yellow */
+    --color-secondary: #1e90ff;  /* Blue */
+    --color-dark: #111111;  /* Black */
+    --color-light: #f8f8f8;
+    --color-gray: #888888;
+    --color-background: #222222;  /* Dark background */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-light);
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.auth-box {
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+}
+
+.auth-title {
+    text-align: center;
+    color: var(--color-primary);
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    background-color: var(--color-background);
+    color: var(--color-light);
+    transition: border-color 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-light);
+}
+
+.btn-secondary:hover {
+    background-color: #1a7ae0;
+}
+
+/* Update existing styles */
+.btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
+
+.task-form input[type="text"],
+.task-form input[type="date"] {
+    background-color: var(--color-background);
+    color: var(--color-light);
+}
+
+.task-item {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+.task-complete {
+    background-color: #2a2a2a;
+}
+
+.no-tasks {
+    color: var(--color-gray);
 }
